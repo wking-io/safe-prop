@@ -6,7 +6,7 @@ A micro-library for safe handling of object properties using the Either ADT from
 
 ## API
 
-### `safeProp`
+### `safeProp(prop, obj)`
 
 ```js
 // safeProp : String -> Object -> Either Error Value
@@ -21,7 +21,7 @@ safeProp("value", obj); // Either.Right(1)
 
 Safely check if prop exists on object. Returns `Either.Left` if it doesn't exists or the value of the property is Nullable and `Either.Right` with the value of the property if it does.
 
-### `safePath`
+### `safePath([..props], obj)`
 
 ```js
 // safeProp : Array String -> Object -> Either Error Value
