@@ -6,6 +6,8 @@ A micro-library for safe handling of object properties using the Either ADT from
 
 ## API
 
+You can review the API below or take an interactive look in [CodeSandbox](https://codesandbox.io/s/x2xy3nzl9w)
+
 ### `safeProp(prop, obj)`
 
 ```js
