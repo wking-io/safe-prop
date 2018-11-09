@@ -42,5 +42,5 @@ export const safePath = curry((props, obj) => {
     return Either.Left(``)
   }
 
-  return Either.Left()
+  return props.reduce((acc, prop) => acc.chain(safeProp(prop)), Either.Right(obj))
 })

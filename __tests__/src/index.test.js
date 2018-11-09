@@ -4,29 +4,29 @@ import { safeProp, safePath } from '../../src/index'
 describe('safePath()', async assert => {
   assert({
     given: 'no arguments',
-    should: 'return Nothing',
-    actual: safePath()().isNothing,
+    should: 'return Left',
+    actual: safePath()().isLeft,
     expected: true
   })
 
   assert({
     given: 'non array path',
-    should: 'return Nothing',
-    actual: safePath('three', {}).isNothing,
+    should: 'return Left',
+    actual: safePath('three', {}).isLeft,
     expected: true
   })
 
   assert({
     given: 'empty object',
-    should: 'return Nothing',
-    actual: safePath(['one', 'two', 'three'], {}).isNothing,
+    should: 'return Left',
+    actual: safePath(['one', 'two', 'three'], {}).isLeft,
     expected: true
   })
 
   assert({
     given: 'Non Object',
-    should: 'return Nothing',
-    actual: safePath(['one', 'two', 'three'], 0).isNothing,
+    should: 'return Left',
+    actual: safePath(['one', 'two', 'three'], 0).isLeft,
     expected: true
   })
 
@@ -34,8 +34,8 @@ describe('safePath()', async assert => {
 
   assert({
     given: 'Object without path',
-    should: 'return Nothing',
-    actual: safePath(['one', 'two', 'three'], wrongObj).isNothing,
+    should: 'return Left',
+    actual: safePath(['one', 'two', 'three'], wrongObj).isLeft,
     expected: true
   })
 
@@ -43,8 +43,8 @@ describe('safePath()', async assert => {
 
   assert({
     given: 'Object with path',
-    should: 'return Just',
-    actual: safePath(['one', 'two', 'three'], rightObj).isJust,
+    should: 'return Right',
+    actual: safePath(['one', 'two', 'three'], rightObj).isRight,
     expected: true
   })
 })
@@ -52,29 +52,29 @@ describe('safePath()', async assert => {
 describe('safeProp()', async assert => {
   assert({
     given: 'no arguments',
-    should: 'return Nothing',
-    actual: safeProp()().isNothing,
+    should: 'return Left',
+    actual: safeProp()().isLeft,
     expected: true
   })
 
   assert({
     given: 'non string prop',
-    should: 'return Nothing',
-    actual: safeProp(0, {}).isNothing,
+    should: 'return Left',
+    actual: safeProp(0, {}).isLeft,
     expected: true
   })
 
   assert({
     given: 'empty object',
-    should: 'return Nothing',
-    actual: safeProp('one', {}).isNothing,
+    should: 'return Left',
+    actual: safeProp('one', {}).isLeft,
     expected: true
   })
 
   assert({
     given: 'Non Object',
-    should: 'return Nothing',
-    actual: safeProp('one', 0).isNothing,
+    should: 'return Left',
+    actual: safeProp('one', 0).isLeft,
     expected: true
   })
 
@@ -82,8 +82,8 @@ describe('safeProp()', async assert => {
 
   assert({
     given: 'Object without prop',
-    should: 'return Nothing',
-    actual: safeProp('one', wrongObj).isNothing,
+    should: 'return Left',
+    actual: safeProp('one', wrongObj).isLeft,
     expected: true
   })
 
@@ -91,8 +91,8 @@ describe('safeProp()', async assert => {
 
   assert({
     given: 'Object with prop',
-    should: 'return Just',
-    actual: safeProp('one', rightObj).isJust,
+    should: 'return Right',
+    actual: safeProp('one', rightObj).isRight,
     expected: true
   })
 })
