@@ -8,11 +8,11 @@ module.exports = {
     library: 'safeProp'
   },
   externals: {
-    'data.maybe': {
-      commonjs: 'data.maybe',
-      commonjs2: 'data.maybe',
-      amd: 'data.maybe',
-      root: 'folktale.data.Maybe'
+    'data.either': {
+      commonjs: 'data.either',
+      commonjs2: 'data.either',
+      amd: 'data.either',
+      root: 'folktale.data.Either'
     }
   },
   module: {

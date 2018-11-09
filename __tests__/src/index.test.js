@@ -1,11 +1,11 @@
 import { describe } from 'riteway'
-import { safeProp, safePath } from '../src/index'
+import { safeProp, safePath } from '../../src/index'
 
 describe('safePath()', async assert => {
   assert({
     given: 'no arguments',
     should: 'return Nothing',
-    actual: safePath().isNothing,
+    actual: safePath()().isNothing,
     expected: true
   })
 
@@ -49,11 +49,11 @@ describe('safePath()', async assert => {
   })
 })
 
-describe('safeProp()', assert => {
+describe('safeProp()', async assert => {
   assert({
     given: 'no arguments',
     should: 'return Nothing',
-    actual: safeProp().isNothing,
+    actual: safeProp()().isNothing,
     expected: true
   })
 
