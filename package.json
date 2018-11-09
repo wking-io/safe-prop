@@ -1,12 +1,11 @@
 {
   "name": "safe-prop",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "Safe object property access using Either ADT",
   "main": "lib/index.bundle.js",
   "module": "lib/index.js",
   "files": [
-    "lib/index.bundle.js",
-    "lib/index.js",
+    "lib",
     "LICENSE.md"
   ],
   "scripts": {
