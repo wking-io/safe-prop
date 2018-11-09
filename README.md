@@ -14,7 +14,7 @@ import { safeProp } from 'safe-prop';
 
 const obj = { value: 1, empty: null };
 
-safeProp("fake", obj):  // Either.Left(`The property "fake" does not exist on the passed in object.`)
+safeProp("fake", obj);  // Either.Left(`The property "fake" does not exist on the passed in object.`)
 safeProp("empty", obj); // Either.Left(`The value for the property "empty" is either null or undefined on the passed in object.`)
 safeProp("value", obj); // Either.Right(1)
 ```
@@ -29,8 +29,8 @@ import { safePath } from 'safe-prop';
 
 const obj = { one: { two: { value: 1, empty: null } } };
 
-safeProp(["fake"], obj):  // Either.Left(`The property "fake" does not exist on the passed in object.`)
-safeProp(["one", "three", "value"], obj):  // Either.Left(`The property "three" does not exist on the passed in object.`)
+safeProp(["fake"], obj);  // Either.Left(`The property "fake" does not exist on the passed in object.`)
+safeProp(["one", "three", "value"], obj);  // Either.Left(`The property "three" does not exist on the passed in object.`)
 safeProp(["one", "two", "empty"], obj); // Either.Left(`The value for the property "empty" is either null or undefined on the passed in object.`)
 safeProp(["one", "two", "value"], obj); // Either.Right(1)
 ```
