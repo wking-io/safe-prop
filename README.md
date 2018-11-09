@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/wking-io/safe-prop.svg?branch=master)](https://travis-ci.org/wking-io/safe-prop)
 [![Coverage Status](https://coveralls.io/repos/github/wking-io/safe-prop/badge.svg?branch=master)](https://coveralls.io/github/wking-io/safe-prop?branch=master)
 
 # safe-prop
