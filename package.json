@@ -1,7 +1,7 @@
 {
   "name": "safe-prop",
-  "version": "1.0.0",
-  "description": "Safe property checks with Maybe ADT",
+  "version": "1.0.1",
+  "description": "Safe object property access using Either ADT",
   "main": "lib/index.bundle.js",
   "module": "lib/index.js",
   "files": [
