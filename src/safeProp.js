@@ -1,5 +1,5 @@
 import { curry, isString, capitalize, hasProp, isObject } from './utils'
-import Either from 'data.Either'
+import Either from 'data.either'
 
 export const safeProp = curry((prop, obj) => {
   if (prop === null) {

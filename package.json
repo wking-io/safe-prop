@@ -10,7 +10,7 @@
     "LICENSE.md"
   ],
   "scripts": {
-    "build": "webpack -p",
+    "build": "webpack -p && babel src --out-dir lib",
     "dev": "webpack -d && babel src --out-dir lib",
     "test": "npm run format && babel-tape-runner __tests__/src/*.test.js | ./node_modules/.bin/tap-spec",
     "test:bundle": "babel-tape-runner __tests__/lib/*.test.js | ./node_modules/.bin/tap-spec",
