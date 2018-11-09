@@ -1,11 +1,11 @@
 /* eslint sort-keys: 0 */
-import babel from 'rollup-plugin-babel';
-import includePaths from 'rollup-plugin-includepaths';
-import { uglify } from 'rollup-plugin-uglify';
-import { terser } from 'rollup-plugin-terser';
-import pkg from './package.json';
+import babel from 'rollup-plugin-babel'
+import includePaths from 'rollup-plugin-includepaths'
+import { uglify } from 'rollup-plugin-uglify'
+import { terser } from 'rollup-plugin-terser'
+import pkg from './package.json'
 
-const presets = [['@babel/env']];
+const presets = [['@babel/env']]
 
 export default [
   {
@@ -15,41 +15,41 @@ export default [
       file: pkg.main,
       format: 'umd',
       name: 'safeProp',
-      globals: pkg.dependencies,
+      globals: pkg.dependencies
     },
     plugins: [
       includePaths({
-        paths: ['lib'],
+        paths: ['lib']
       }),
       babel({
         externalHelpers: true,
         plugins: ['@babel/external-helpers'],
         exclude: 'node_modules/**',
         babelrc: false,
-        presets,
+        presets
       }),
-      uglify(),
-    ],
+      uglify()
+    ]
   },
   {
     external: Object.keys(pkg.dependencies),
     input: 'lib/index.esm.js',
     output: {
       file: pkg.module,
-      format: 'es',
+      format: 'es'
     },
     plugins: [
       includePaths({
-        paths: ['lib'],
+        paths: ['lib']
       }),
       babel({
         externalHelpers: true,
         plugins: ['@babel/external-helpers'],
         exclude: 'node_modules/**',
         babelrc: false,
-        presets,
+        presets
       }),
-      terser(),
-    ],
-  },
-];
+      terser()
+    ]
+  }
+]
