@@ -5,7 +5,9 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './lib'),
     filename: 'index.bundle.js',
-    library: 'safeProp'
+    library: 'safeProp',
+    libraryTarget: 'umd',
+    globalObject: 'this'
   },
   externals: {
     'data.either': {

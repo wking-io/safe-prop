@@ -22,7 +22,7 @@ export const safeProp = curry((prop, obj) => {
     return Either.Left(`The property "${prop}" does not exist on the passed in object.`)
   }
 
-  return Either.fromNullable(obj[prop]).leftMap(`The value for the property "${prop}" is either null or undefined on the passed in object.`)
+  return Either.fromNullable(obj[prop]).leftMap(() => `The value for the property "${prop}" is either null or undefined on the passed in object.`)
 })
 
 export const safePath = curry((props, obj) => {
