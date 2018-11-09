@@ -6,13 +6,8 @@ branches:
   only:
     - master
 
-cache:
-  directories:
-    - node_modules
-
 install:
   - npm install
-  - npm install data.either
 
 script:
   - npm run test
